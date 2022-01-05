@@ -11,18 +11,20 @@
 /** La función está incompleta */
 
 function agua_necesaria(condicion, km) {
-    let agua_por_km
-    let litros_totales
+
+    let agua_por_km;    
 
     if (condicion == 'buena') {
-        agua_por_km = 0.5
-    }
-
-    return litros_totales
-
+        agua_por_km = 0.5;
+    } else if(condicion == 'regular'){
+        agua_por_km = 0.61;
+    } else if(condicion == 'mala') {
+        agua_por_km = 0.71;
+    }else{};
+   
+    return km * agua_por_km;
+      
 }
 
-let condicion = 'regular'
-let km = 5
-let agua = agua_necesaria(condicion, km)
-console.log("Este ciclista deberia necesitar 5 * 0.6 = 3 litros de agua en total: ", agua)
+litros_necesarios = agua_necesaria('mala', 50);
+console.log(`Este ciclista deberia necesitar ${litros_necesarios} litros de agua en total`);
